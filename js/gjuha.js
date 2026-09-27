@@ -16,6 +16,7 @@ const EN = {
   'Një linjë': 'One line',
   'Një kompani': 'One company',
   'Gjithë rrjeti': 'The whole network',
+  'E vlefshme': 'Valid',
   // Kapitujt si stacione (01–09): titujt e mëdhenj që nuk janë emra seksionesh
   'Pesë hapa. Një udhëtim.': 'Five steps. One journey.',
   'Linjë. Kompani. Rrjet.': 'Line. Company. Network.',
