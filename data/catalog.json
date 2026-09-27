@@ -1,0 +1,48 @@
+{
+  "source": "snapshot",
+  "measured_at": "2026-09-26T22:27:36.809Z",
+  "products": [
+    {
+      "code": "sub-line-30",
+      "scope": "LINE",
+      "scope_name": "Linjë",
+      "duration_days": 30,
+      "price_lek": 600
+    },
+    {
+      "code": "sub-company-30",
+      "scope": "COMPANY",
+      "scope_name": "Kompani",
+      "duration_days": 30,
+      "price_lek": 1000
+    },
+    {
+      "code": "sub-universal-30",
+      "scope": "NETWORK",
+      "scope_name": "Rrjet",
+      "duration_days": 30,
+      "price_lek": 1600
+    }
+  ],
+  "scopes": {
+    "ROUTE": {
+      "key": "LINE",
+      "name": "Linjë",
+      "summary": "Një linjë autobusi, që e zgjedh kur blen."
+    },
+    "COMPANY": {
+      "key": "COMPANY",
+      "name": "Kompani",
+      "summary": "Të gjitha linjat e një operatori."
+    },
+    "NETWORK": {
+      "key": "NETWORK",
+      "name": "Rrjet",
+      "summary": "I gjithë rrjeti i linjave në Abonejë."
+    }
+  },
+  "network": {
+    "routes": 28,
+    "companies": 7
+  }
+}

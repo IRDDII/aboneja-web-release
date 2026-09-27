@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0",
+  "environment": "PILOT",
+  "label": "Pilot V1",
+  "siteOrigin": "https://irddii.github.io",
+  "appUrl": "demo/",
+  "appLinkLabel": "Hap demon",
+  "catalog": "snapshot",
+  "indexable": false,
+  "features": {
+    "payments_live": false,
+    "tourist_camera_reading": false,
+    "support_email_published": false,
+    "pilot_badges": true
+  },
+  "contact": {
+    "email": null,
+    "city": "Tiranë"
+  },
+  "catalogDurations": [
+    30
+  ],
+  "tourist": {
+    "status": "next_update",
+    "duration_days": 7,
+    "offers": [
+      {
+        "scope": "LINE",
+        "price_lek": 600
+      },
+      {
+        "scope": "COMPANY",
+        "price_lek": 900
+      },
+      {
+        "scope": "NETWORK",
+        "price_lek": 1200
+      }
+    ]
+  }
+}

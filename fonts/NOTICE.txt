@@ -1,0 +1,9 @@
+Fontet e faqes, të shërbyera nga vetë faqja (CSP font-src 'self').
+Burimi: Google Fonts, nënbashkësia latin (mbulon ë, ç, Ë, Ç). Licenca: SIL Open Font License 1.1.
+
+anybody.woff2         Anybody (variabël: gjerësia 50–150, pesha 100–900) — titujt dhe marka
+                      Copyright 2020 The Anybody Project Authors — anybody-OFL.txt
+onest.woff2           Onest (variabël: pesha 100–900) — teksti
+                      Copyright 2021 The Onest Project Authors — onest-OFL.txt
+jetbrains-mono.woff2  JetBrains Mono (variabël: pesha 400–600) — numrat e kapitujve, numëruesi
+                      Copyright 2020 The JetBrains Mono Project Authors — jetbrains-mono-OFL.txt
