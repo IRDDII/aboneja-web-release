@@ -18,9 +18,12 @@ const EN = {
   'Gjithë rrjeti': 'The whole network',
   'E vlefshme': 'Valid',
   // Kapitujt si stacione (01–09): titujt e mëdhenj që nuk janë emra seksionesh
-  'Pesë hapa. Një udhëtim.': 'Five steps. One journey.',
-  'Linjë. Kompani. Rrjet.': 'Line. Company. Network.',
-  'Skaneri pyet. Serveri vendos.': 'The scanner asks. The server decides.',
+  'Regjistrohu një herë,': 'Sign up once,',
+  'udhëto çdo ditë': 'ride every day',
+  'Ti zgjedh': 'You choose',
+  'sa larg të çon': 'how far it takes you',
+  'Fatorinoja skanon,': 'The conductor scans,',
+  'serveri vendos': 'the server decides',
   'Stacioni i fundit': 'Last stop',
   'Menuja': 'Menu',
   'Si funksionon': 'How it works',
@@ -35,7 +38,8 @@ const EN = {
   'Hap demon': 'Open the demo',
   'Hap aplikacionin': 'Open the app',
   'Në pilot. Pagesat reale ende nuk janë aktive.': 'In pilot. Real payments are not active yet.',
-  'Një mënyrë më e thjeshtë për transportin urban.': 'A simpler way to ride the city.',
+  'Një mënyrë më e thjeshtë për': 'A simpler way to',
+  'transportin urban': 'ride the city',
   'Abonimi i autobusit, në telefonin tënd. Zgjedh një linjë, një kompani ose gjithë rrjetin, dhe e tregon me një kod QR që verifikohet në çast kur hip.':
     'Your bus subscription, on your phone. Choose one line, one company or the whole network, and show a QR code that is verified the moment you board.',
   'Shiko abonimet': 'See subscriptions',
@@ -51,18 +55,23 @@ const EN = {
   'e Abonejës': 'of Aboneja',
   'Sa kushton?': 'What does it cost?',
   'Çmimet lexohen nga katalogu i Abonejës, te seksioni Abonimet.': 'Prices are read from the Aboneja catalogue, in the Subscriptions section.',
-  'Pesë hapa, një herë. Pastaj çdo udhëtim është vetëm hapi i fundit.': 'Five steps, once. After that every ride is only the last step.',
+  'Blerja bëhet një herë në muaj, dhe në çdo udhëtim mjafton kodi QR.':
+    'You buy once a month, and on every ride the QR code is enough.',
   'Regjistrohu': 'Sign up',
-  'Krijo llogarinë me email dhe fjalëkalim, dhe konfirmo emailin me një kod.': 'Create the account with an email and password, then confirm the email with a code.',
+  'Shkruaj të dhënat e letërnjoftimit ose të pasaportës, krijo llogarinë me email dhe fjalëkalim, dhe konfirmo emailin me një kod.':
+    'Enter your ID card or passport details, create the account with an email and password, and confirm the email with a code.',
   'Zgjidh abonimin': 'Choose the subscription',
   'Linjë, kompani ose rrjet, për 30 ditë. Çmimi shfaqet para se të vendosësh.': 'Line, company or network, for 30 days. The price is shown before you decide.',
-  'Aktivizo': 'Activate',
-  'Pas blerjes abonimi del te «Abonimet e mia», me datën kur nis dhe kur mbaron.': 'After the purchase the subscription appears under “My subscriptions”, with its start and end date.',
+  'Paguaj': 'Pay',
+  'Pagesa bëhet në aplikacion. Abonimi del menjëherë te «Abonimet e mia», me datën kur nis dhe kur mbaron.':
+    'You pay in the app. The subscription appears right away under “My subscriptions”, with its start and end dates.',
   'Shfaq QR-në': 'Show the QR',
   'Aplikacioni merr nga serveri një kod të ri, që vlen vetëm për pak minuta.': 'The app fetches a fresh code from the server, valid for a couple of minutes only.',
   'Udhëto': 'Ride',
-  'Skaneri i operatorit e verifikon kodin te serveri dhe të tregon përgjigjen menjëherë.': 'The operator’s scanner verifies the code with the server and shows the answer at once.',
-  'Tre shtrirje. Zgjidh sa larg të çon abonimi.': 'Three scopes. Choose how far your subscription takes you.',
+  'Fatorinoja e skanon kodin, dhe serveri jep përgjigjen në çast.':
+    'The conductor scans the code, and the server answers instantly.',
+  'Tri mundësi, nga një linjë e vetme te gjithë rrjeti.':
+    'Three options, from a single line to the whole network.',
   'Të gjitha vlejnë': 'All of them last',
   '30 ditë': '30 days',
   'Po lexohen çmimet nga katalogu…': 'Reading prices from the catalogue…',
@@ -76,12 +85,13 @@ const EN = {
     'Valid on every line of every company in Aboneja. You never have to think about who runs the bus.',
 
   // ── Turistët ─────────────────────────────────────────────────────────────
-  'Përditësimi i ardhshëm': 'Next update',
-  'Viziton Shqipërinë?': 'Visiting Albania?',
-  'Paketa turistike 7-ditore, vetëm për turistët. Regjistrohesh me pasaportë, konfirmon emailin me një kod, merr QR-në dhe udhëton shtatë ditë.':
-    'A 7-day visitor pack, for visitors only. You sign up with your passport, confirm your email with a code, get the QR and ride for seven days.',
-  'Turistët nuk blejnë abonimet mujore të qytetarëve: kanë ofertat e tyre. Paketat turistike nuk janë ende në shitje; këtu tregohen çmimet e vendosura, që të dihen para se të hapen.':
-    'Visitors do not buy the citizens’ monthly subscriptions: they have their own offers. Visitor packs are not on sale yet; the agreed prices are shown here so they are known before they open.',
+  'Vjen me përditësimin e ardhshëm': 'Coming in the next update',
+  'Viziton': 'Visiting',
+  'Shqipërinë?': 'Albania?',
+  'Paketa turistike zgjat 7 ditë dhe është vetëm për vizitorët. Regjistrohesh me kartën e identitetit ose me pasaportë, konfirmon emailin me një kod dhe merr kodin QR.':
+    'The visitor pack lasts 7 days and is for visitors only. You sign up with your ID card or passport, confirm your email with a code, and get the QR code.',
+  'Abonimet mujore janë për qytetarët, ndërsa vizitorët kanë paketat e veta. Paketat nuk shiten ende. Çmimet që sheh këtu janë vendosur që tani, që ta dish sa kushton para se të nisësh udhëtimin.':
+    'Monthly subscriptions are for citizens, and visitors have their own packs. The packs are not on sale yet. The prices shown here are already set, so you know the cost before your trip.',
   'Çmimet e paketave turistike publikohen së shpejti.': 'Visitor pack prices will be published soon.',
 
   // ── Operatorët ───────────────────────────────────────────────────────────
@@ -89,7 +99,8 @@ const EN = {
   'Kompanitë e transportit marrin skanerin, verdiktin e serverit dhe një pamje të qartë të udhëtimeve në linjat e tyre.':
     'Transport companies get the scanner, the server’s verdict and a clear view of the rides on their lines.',
   'Skanimi': 'Scanning',
-  'Fatorino skanon kodin QR të udhëtarit me pajisjen e kompanisë.': 'The conductor scans the passenger’s QR with the company device.',
+  'Kodi QR i udhëtarit skanohet me pajisjen e kompanisë.':
+    'The passenger’s QR code is scanned with the company’s device.',
   'Verifikimi': 'Verification',
   'Serveri vendos: i vlefshëm, i skaduar, i revokuar ose i përdorur tashmë. Pajisja nuk vendos vetë.':
     'The server decides: valid, expired, revoked or already used. The device never decides on its own.',
@@ -99,37 +110,39 @@ const EN = {
   'Menaxhimi': 'Management',
   'Kompania mban pajisjet e veta të skanimit dhe sheh skanimet në linjat që drejton.': 'The company manages its own scanners and sees the scans on the lines it runs.',
   'Ndarja': 'Revenue split',
-  'Abonimi i rrjetit nuk i shkon kompanisë ku u ble: ndahet sipas udhëtimeve që ndodhën vërtet — kush e mbarti udhëtarin, merr pjesën.':
-    'A network subscription does not belong to the company that sold it: it is split by the rides that actually happened — whoever carried the passenger gets the share.',
+  'Abonimi i rrjetit nuk i përket një kompanie të vetme: ndahet sipas udhëtimeve që ndodhën vërtet, dhe kush e mbarti udhëtarin merr pjesën.':
+    'A network subscription does not belong to a single company: it is split by the rides that actually happened, and whoever carried the passenger gets the share.',
 
   // ── Siguria ──────────────────────────────────────────────────────────────
-  'Siguria dhe privatësia': 'Security and privacy',
-  'Si i mbajmë të dhënat e tua, pa premtime më të mëdha se sistemi.': 'How we hold your data, with no promises bigger than the system.',
-  'Identiteti i mbrojtur': 'Protected identity',
-  'Identiteti vuloset një herë dhe nuk ndryshohet më nga profili. Aboneja nuk ruan foto të dokumentit, dhe numri i tij shfaqet i maskuar edhe për administratorët.':
-    'Identity is sealed once and is never edited from the profile. Aboneja stores no photo of the document, and its number is masked even for administrators.',
-  'Verifikim te serveri': 'Verified on the server',
-  'Çdo skanim vendoset te serveri, jo te telefoni apo te skaneri. Një aplikacion i ndryshuar nuk e bën dot një abonim të skaduar të vlefshëm.':
-    'Every scan is decided on the server, not on the phone or the scanner. A modified app cannot make an expired subscription valid.',
-  'Kodi QR': 'The QR code',
-  'Një abonim ka vetëm një kod aktiv. Kodi skadon pas pak minutash, dhe i njëjti kod i përdorur në dy vende kapet.':
-    'A subscription has only one live code. It expires within minutes, and the same code used in two places is caught.',
-  'Fjalëkalimet': 'Passwords',
-  'Fjalëkalimi nuk ruhet kurrë ashtu siç e shkruan: baza mban vetëm një hash të tij.': 'A password is never stored as you type it: the database keeps only a hash.',
-  'Gjurmë auditimi': 'Audit trail',
-  'Hyrjet dhe veprimet e ndjeshme të administratorëve regjistrohen, që çdo ndryshim të ketë emër dhe kohë.':
-    'Sign-ins and sensitive administrator actions are recorded, so every change carries a name and a time.',
-  'Ende në pilot': 'Still in pilot',
-  'Pagesat reale me bankë': 'Real bank payments',
-  'Dërgimi i emailit te kutia jote reale': 'Email delivery to your real inbox',
-  'Leximi i dokumentit me kamerë': 'Reading the document with the camera',
+  'Siguria dhe': 'Security and',
+  'privatësia': 'privacy',
+  'Mbajmë vetëm të dhënat që duhen për abonimin, dhe i mbrojmë kështu:': 'We keep only the data your subscription needs, and we protect it like this:',
+  'Dokumenti yt': 'Your document',
+  'Nuk ruajmë foto të letërnjoftimit apo të pasaportës. Numri personal shfaqet pjesërisht i fshehur, edhe për stafin tonë. Pasi verifikohet, identiteti nuk ndryshohet më nga profili, që abonimi të mos kalojë në emrin e dikujt tjetër.':
+    'We store no photo of your ID card or passport. Your personal number is partly hidden, even from our staff. Once verified, your identity can no longer be changed from the profile, so the subscription cannot move to someone else’s name.',
+  'Vendimi merret te serveri': 'The server decides',
+  'Kur fatorinoja skanon kodin, vendimin e merr serveri ynë. Telefoni yt dhe pajisja e skanimit vetëm e dërgojnë kodin dhe shfaqin përgjigjen, prandaj një aplikacion i ngacmuar nuk e bën dot të vlefshëm një abonim të skaduar.':
+    'When the conductor scans your code, our server makes the decision. Your phone and the scanner only send the code and show the answer, so a tampered app cannot make an expired subscription valid.',
+  'Kodi QR ndryshon vetë': 'The QR code keeps changing',
+  'Abonimi ka një kod të vetëm aktiv, dhe ai skadon pas pak minutash. Një foto e vjetër e kodit nuk vlen, dhe nëse i njëjti kod skanohet në dy vende, skanimi i dytë refuzohet.':
+    'Your subscription has a single live code that expires after a few minutes. An old photo of the code does not work, and if the same code is scanned in two places, the second scan is refused.',
+  'Fjalëkalimi yt': 'Your password',
+  'Fjalëkalimin nuk e ruajmë ashtu siç e shkruan. Baza mban vetëm një gjurmë të koduar të tij (hash), prandaj as ne nuk mund ta lexojmë.':
+    'We never store your password as you type it. The database keeps only an encoded fingerprint of it (a hash), so not even we can read it.',
+  'Çdo veprim i stafit shënohet': 'Every staff action is logged',
+  'Kur dikush nga stafi hyn në panel ose ndryshon diçka të ndjeshme, shënohet kush e bëri dhe kur.':
+    'When a staff member signs in to the panel or changes something sensitive, we record who did it and when.',
+  'Ende jo gati': 'Not ready yet',
+  'Pagesa me kartë bankare. Tani blerjet janë demo.': 'Paying by bank card. Purchases are demo for now.',
+  'Leximi i dokumentit me kamerë. Tani të dhënat shkruhen me dorë.': 'Reading your document with the camera. For now you type the details.',
 
   // ── Pyetje ───────────────────────────────────────────────────────────────
   'Pyetje të shpeshta': 'Frequently asked questions',
-  'Përgjigje nga mënyra si punon sistemi sot.': 'Answers from how the system works today.',
+  'Përgjigjet përshkruajnë aplikacionin ashtu siç punon sot.':
+    'The answers describe the app as it works today.',
   'Çfarë është Aboneja?': 'What is Aboneja?',
-  'Abonimi i autobusit urban në telefon. Blen një abonim 30-ditësh për një linjë, një kompani ose gjithë rrjetin, dhe e tregon me një kod QR që skanohet kur hip.':
-    'The city bus subscription on your phone. You buy a 30-day subscription for one line, one company or the whole network, and show a QR code that is scanned when you board.',
+  'Aboneja është abonimi i autobusit urban, në telefonin tënd. E blen nga aplikacioni dhe zgjedh ku vlen: në një linjë, në të gjitha linjat e një kompanie ose në gjithë rrjetin. Abonimi zgjat 30 ditë. Kur hip, tregon kodin QR që del në ekran, fatorinoja e skanon dhe je në rregull.':
+    'Aboneja is your city bus subscription, on your phone. You buy it in the app and choose where it is valid: on one line, on every line of one company, or on the whole network. It lasts 30 days. When you board, you show the QR code on your screen, the conductor scans it, and you are all set.',
   'Çmimet janë te seksioni Abonimet dhe lexohen nga i njëjti katalog që përdor aplikacioni.': 'Prices are in the Subscriptions section and come from the same catalogue the app uses.',
   'Në linjat e autobusëve urbanë të Tiranës që janë në Abonejë.': 'On the Tirana city bus lines that are in Aboneja.',
   'Abonimi i linjës vlen në linjën që zgjedh, ai i kompanisë në linjat e saj, dhe ai i rrjetit kudo.': 'A line subscription is valid on the chosen line, a company one on its lines, and a network one everywhere.',
@@ -137,29 +150,36 @@ const EN = {
   'Jo ende. Kodi QR krijohet nga serveri dhe vlen vetëm pak minuta, prandaj telefoni ka nevojë për internet kur e hap. Edhe skaneri i verifikon kodet te serveri.':
     'Not yet. The QR is created by the server and lasts only a few minutes, so the phone needs internet when you open it. The scanner also verifies codes with the server.',
   'Si regjistrohem?': 'How do I sign up?',
-  'Nis me dokumentin: shkruan emrin, mbiemrin, datëlindjen dhe numrin personal, dhe i konfirmon. Pastaj krijon llogarinë me email dhe fjalëkalim dhe konfirmon emailin me një kod. Identiteti vuloset nga serveri dhe nuk ndryshohet më. Më pas zgjedh abonimin.':
-    'You start with the document: enter your first name, last name, date of birth and personal number, and confirm them. Then you create the account with an email and password and confirm the email with a code. The server seals the identity and it never changes again. After that you choose the subscription.',
+  'Nis me letërnjoftimin ose me pasaportën (nën 16 vjeç, vetëm me pasaportë): shkruan emrin, mbiemrin, datëlindjen dhe numrin personal, dhe i konfirmon. Pastaj krijon llogarinë me email dhe fjalëkalim dhe konfirmon emailin me kodin që të vjen. Pasi verifikohet, identiteti nuk ndryshohet më. Më pas zgjedh abonimin.':
+    'You start with your ID card or passport (under 16, passport only): enter your first name, last name, date of birth and personal number, and confirm them. Then you create the account with an email and password and confirm the email with the code you receive. Once verified, your identity never changes. After that you choose the subscription.',
   'Çfarë ndodh kur ndryshoj telefon?': 'What happens when I change phone?',
   'Abonimi rri te llogaria, jo te telefoni. Hyr me të njëjtën llogari në telefonin e ri: kodi i ri QR e zëvendëson menjëherë të vjetrin.':
     'The subscription lives in the account, not the phone. Sign in on the new phone and the new QR immediately replaces the old one.',
-  'Si funksionon QR?': 'How does the QR work?',
+  'Si funksionon kodi QR?': 'How does the QR code work?',
   'Kur hap abonimin, aplikacioni merr një kod të ri nga serveri. Skaneri e dërgon kodin te serveri, i cili kontrollon abonimin dhe kthen përgjigjen: i vlefshëm, i skaduar, i revokuar ose i përdorur tashmë.':
     'When you open the subscription, the app fetches a fresh code from the server. The scanner sends that code back to the server, which checks the subscription and answers: valid, expired, revoked or already used.',
   'A mund ta përdor si turist?': 'Can I use it as a visitor?',
-  'Jo me abonimet e qytetarëve. Turistët kanë seksionin e tyre, vetëm për turistë, me ofertat e veta: paketat turistike 7-ditore (shih seksionin Turistët). Turisti regjistrohet me pasaportë dhe konfirmon emailin me një kod, që ta ruajë llogarinë edhe kur ndërron telefon. Seksioni hapet me përditësimin e ardhshëm; leximi i pasaportës me kamerë nuk është ende gati.':
-    'Not with the citizens’ subscriptions. Visitors have their own section, for visitors only, with their own offers: 7-day visitor packs (see the Visitors section). A visitor signs up with a passport and confirms the email with a code, so the account survives a change of phone. The section opens with the next update; reading the passport with the camera is not ready yet.',
+  'Jo me abonimet e qytetarëve. Vizitorët kanë paketat turistike 7-ditore (shih seksionin Turistët). Regjistrohesh me kartën e identitetit ose me pasaportë dhe konfirmon emailin me një kod, që llogaria të mbetet e jotja edhe kur ndërron telefon. Paketat hapen me përditësimin e ardhshëm. Leximi i dokumentit me kamerë nuk është ende gati.':
+    'Not with the citizens’ subscriptions. Visitors have their own 7-day visitor packs (see the Visitors section). You sign up with your ID card or passport and confirm your email with a code, so the account stays yours when you change phone. The packs open with the next update. Reading the document with the camera is not ready yet.',
   'Çfarë ndodh nëse më skadon abonimi?': 'What if my subscription expires?',
   'Skaneri e tregon si të skaduar dhe hipja nuk pranohet me atë abonim. Abonimi nuk rinovohet vetë: blen një të ri nga aplikacioni kur të duash.':
     'The scanner shows it as expired and boarding is not accepted with it. A subscription never renews itself: you buy a new one from the app whenever you want.',
+  'Si e fshij llogarinë?': 'How do I delete my account?',
+  'Te aplikacioni: Profili, pastaj «Fshi llogarinë». Llogaria ngrin menjëherë dhe kodi QR nuk vlen më. Për 24 orë mund ta anulosh duke hyrë sërish; pas kësaj fshihen të dhënat e tua personale. Abonimi aktiv mbaron pa rimbursim. Hapat e plotë:':
+    'In the app: Profile, then “Delete account”. The account freezes at once and the QR code stops working. For 24 hours you can cancel by signing in again; after that your personal data is erased. An active subscription ends without a refund. Full steps:',
+  'Fshi llogarinë': 'Delete account',
+  'Privatësia': 'Privacy',
+  'Kushtet': 'Terms',
   'A mund të paguaj sot?': 'Can I pay today?',
   'Jo ende. Pagesat reale hapen vetëm pasi lidhja me bankën të provohet plotësisht. Deri atëherë blerjet në pilot janë demo.':
     'Not yet. Real payments open only after the bank connection is fully proven. Until then, pilot purchases are demo.',
   'Si kontaktoj mbështetjen?': 'How do I contact support?',
-  'Adresa zyrtare e mbështetjes publikohet para nisjes së pilotit.': 'The official support address will be published before the pilot starts.',
+  'Shkruaj te': 'Write to',
 
   // ── Pse u krijua ─────────────────────────────────────────────────────────
-  'Pse u krijua Aboneja Ime': 'Why Aboneja Ime was built',
-  '«Pa radhë, pa sportele.»': '“No queues, no counters.”',
+  'Pse u krijua': 'Why we built',
+  'Pa radhë': 'No queues',
+  'pa sportele': 'no counters',
   'Problemi': 'The problem',
   'Qytetarët shqiptarë që përdorin transportin publik urban përballen çdo ditë me radhë të gjata, orare të kufizuara të sporteleve dhe mungesë informacioni në kohë reale.':
     'Albanians who use urban public transport face long queues every day, limited counter hours and no real-time information.',
@@ -180,24 +200,20 @@ const EN = {
   'Gati: skadimi tregohet deri në orë': 'Ready: the expiry is shown down to the hour',
   'Panel administrativ për institucionet': 'An administration panel for institutions',
   'Në pilot: del online pas hyrjes me dy faktorë': 'In pilot: goes online after two-factor sign-in',
-  'Sot Aboneja është në pilot: udhëtari regjistrohet, blen, merr QR-në dhe skanohet — me para demo. Pagesat reale mbeten të mbyllura derisa banka dhe provat e parave të jenë në vend. Kjo faqe nuk e fsheh asnjë nga këto.':
-    'Today Aboneja is in pilot: the passenger signs up, buys, gets the QR and is scanned — with demo money. Real payments stay closed until the bank and the money tests are in place. This page hides none of it.',
+  'Sot Aboneja është në pilot: udhëtari regjistrohet, blen abonimin me para demo, merr kodin QR dhe fatorinoja ia skanon. Pagesat reale mbeten të mbyllura derisa të lidhet banka dhe të provohet çdo hap i parave.':
+    'Today Aboneja is in pilot: the passenger signs up, buys the subscription with demo money, gets the QR code and the conductor scans it. Real payments stay closed until the bank is connected and every money step is proven.',
 
   // ── Rreth, kontakt ───────────────────────────────────────────────────────
-  'Rreth Aboneja': 'About Aboneja',
-  'Aboneja Ime është një projekt shqiptar për transportin urban, i ndërtuar në Tiranë.': 'Aboneja Ime is an Albanian project for city transport, built in Tirana.',
-  'Qëllimi është i thjeshtë: udhëtari ta blejë, ta mbajë dhe ta tregojë abonimin nga telefoni, dhe kompanitë e transportit të kenë të dhëna të sakta për udhëtimet në linjat e tyre.':
-    'The aim is simple: the passenger buys, keeps and shows the subscription from their phone, and transport companies get accurate data about the rides on their lines.',
-  'Kalimi nga sporteli fizik te telefoni heq pritjen dhe oraret e kufizuara. Platforma mbështetet te validimi me kod QR pa kontakt dhe te një panel drejtimi për institucionet vendore; gjurmimi i mjeteve në kohë reale është hapi i radhës.':
-    'Moving from the physical counter to the phone removes the waiting and the limited opening hours. The platform rests on contactless QR validation and a management dashboard for local authorities; real-time vehicle tracking is the next step.',
-  'Aboneja u ndërtua nga një person, me ndihmën e inteligjencës artificiale dhe me kosto minimale. Sot nuk është më ide: ka bazë të dhënash të vetën, verifikim identiteti, kod QR që lëshohet nga serveri, skanim me verdikt të serverit dhe një regjistër ku çdo transaksion mbyllet në zero.':
-    'Aboneja was built by one person, with the help of artificial intelligence and at minimal cost. It is no longer an idea: it has its own database, identity verification, a QR code issued by the server, scanning with a server verdict, and a ledger where every transaction sums to zero.',
-  'Synimi është të shërbejë bashkitë e Shqipërisë, duke nisur nga një linjë e vetme me një operator. Aboneja është sot në fazë pilot, dhe çdo veçori që nuk është ende gati shënohet si e tillë në këtë faqe.':
-    'The aim is to serve the municipalities of Albania, starting from a single line with a single operator. Aboneja is in its pilot phase today, and any feature that is not ready yet is marked as such on this page.',
-  'Ky është një hap drejt infrastrukturës së qytetit të mençur: bashkëpunim mes sektorit publik dhe atij privat, me teknologji që e bën abonimin më të arritshëm për ata që udhëtojnë çdo ditë.':
-    'This is a step toward smart city infrastructure: public–private collaboration, with technology that makes the subscription more accessible for the people who travel every day.',
-  'Adresa zyrtare e mbështetjes publikohet para nisjes së pilotit. Deri atëherë, Aboneja është në testim.':
-    'The official support address will be published before the pilot starts. Until then, Aboneja is in testing.',
+  'Digjitalizimi i transportit publik': 'Digitalising public transport',
+  'Blerja e abonimeve mujore direkt në aplikacion': 'Buying monthly subscriptions straight in the app',
+  'Pa radhë, në çdo moment, pa sportele': 'No queues, any time, no counters',
+  'Çdo informacion mbi kohën e mbërritjes dhe pozicionin e autobusit, në kohë reale':
+    'Arrival times and the bus’s position, in real time',
+  'Në zhvillim': 'In development',
+  'Shënim': 'Note',
+  'Aplikacioni është në fazën e tij fillestare, në pilot. U krijua vetëm nga një mendim dhe një dëshirë, me kosto minimale. Unë nuk jam programues: e ndërtova falë inteligjencës artificiale, që e kthen mendimin tënd në aplikacion.':
+    'The app is in its early stage, in pilot. It was created from nothing but an idea and a wish, at minimal cost. I am not a programmer: I built it thanks to artificial intelligence, which turns your idea into an app.',
+  '. Përgjigjemi në ditët e punës.': '. We reply on working days.',
   'Aboneja Ime': 'Aboneja Ime',
   'Shqip': 'Shqip',
   'English': 'English',

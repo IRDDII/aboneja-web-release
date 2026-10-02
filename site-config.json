@@ -10,11 +10,11 @@
   "features": {
     "payments_live": false,
     "tourist_camera_reading": false,
-    "support_email_published": false,
+    "support_email_published": true,
     "pilot_badges": true
   },
   "contact": {
-    "email": null,
+    "email": "info@aboneja.al",
     "city": "Tiranë"
   },
   "catalogDurations": [

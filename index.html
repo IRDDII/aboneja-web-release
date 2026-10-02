@@ -12,15 +12,15 @@
 <!-- Fontet e markës merren që në fillim: «ABONEJA» e hyrjes del te 1,0 s dhe s'duhet të ndërrojë shkronjë para syve. -->
 <link rel="preload" href="fonts/anybody.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/onest.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.css?v=16668256">
-<script src="js/hyrja.js?v=359b0061"></script>
-<script type="module" src="js/site.js?v=56e7819b"></script>
+<link rel="stylesheet" href="css/site.css?v=960b15e4">
+<script src="js/hyrja.js?v=c934808a"></script>
+<script type="module" src="js/site.js?v=c82b37e9"></script>
 </head>
 <body>
-<!-- ═══ HYRJA «Rrjeti ndizet» — 6,7 s, hapja e parë e sesionit. Dekor, jo informacion.
+<!-- ═══ HYRJA «Rrjeti ndizet» — 10,2 s, në çdo hapje dhe rifreskim. Dekor, jo informacion.
      Qyteti natën → linjat e largëta → «ABONEJA» ngrihet nga vija e maskës, shtrydhet dhe kyçet
-     te 1,37 s, skanohet → linjë, kompani, rrjet → QR-ja del me sustë → mjetet mbërrijnë →
-     linjat tërhiqen, teksti zhytet → perdja ngrihet me gjithë skenën. Asgjë nuk zbehet: format ndryshojnë.
+     te 1,37 s, skanohet → linjë, kompani, rrjet (kaskadë, me valë drite) → QR-ja del me sustë →
+     mjetet mbërrijnë → «E vlefshme» → linjat tërhiqen, teksti zhytet → perdja ngrihet me gjithë skenën.
      Kohët jetojnë te :root i site.css («Kohët e hyrjes»), asgjë këtu. ═══ -->
 <div class="hyrja" data-hyrja aria-hidden="true">
   <div class="hyrja__perdja">
@@ -44,12 +44,16 @@
       <path class="hyrja__mjeti hyrja__mjeti--1" pathLength="1" data-d="M-5 62 C 22 61, 50 64, 84 62" d="M-5 62 C 22 61, 50 64, 84 62"/>
       <path class="hyrja__mjeti hyrja__mjeti--2" pathLength="1" data-d="M-5 74 C 24 76, 52 70, 84 62" d="M-5 74 C 24 76, 52 70, 84 62"/>
       <path class="hyrja__mjeti hyrja__mjeti--3" pathLength="1" data-d="M-5 50 C 26 48, 56 55, 84 62" d="M-5 50 C 26 48, 56 55, 84 62"/>
+      <path class="hyrja__puls hyrja__puls--linje" pathLength="1" data-d="M-5 62 C 22 61, 50 64, 84 62" d="M-5 62 C 22 61, 50 64, 84 62"/>
+      <path class="hyrja__puls hyrja__puls--kompani" pathLength="1" data-d="M-5 74 C 24 76, 52 70, 84 62" d="M-5 74 C 24 76, 52 70, 84 62"/>
+      <path class="hyrja__puls hyrja__puls--rrjet" pathLength="1" data-d="M-5 50 C 26 48, 56 55, 84 62" d="M-5 50 C 26 48, 56 55, 84 62"/>
     </svg>
     <p class="hyrja__etiketa hyrja__etiketa--rrjet"><span>Gjithë rrjeti</span></p>
     <p class="hyrja__etiketa hyrja__etiketa--linje"><span>Një linjë</span></p>
     <p class="hyrja__etiketa hyrja__etiketa--kompani"><span>Një kompani</span></p>
     <div class="hyrja__nyja">
       <span class="hyrja__nyja-puls"></span>
+      <span class="hyrja__nyja-puls hyrja__nyja-puls--2"></span>
       <svg class="hyrja__qr" viewBox="0 0 92 92" focusable="false">
         <rect class="hyrja__qr-sfondi" x="8" y="8" width="76" height="76" rx="14"/>
         <path class="hyrja__qr-kendet" pathLength="1" d="M3 24 V3 H24 M68 3 H89 V24 M89 68 V89 H68 M24 89 H3 V68"/>
@@ -106,7 +110,7 @@
       <div class="hero__text">
         <p class="pilot" data-pilot hidden><span class="pilot__dot" aria-hidden="true"></span>Në pilot. Pagesat reale ende nuk janë aktive.</p>
         <p class="hero__brand">Aboneja</p>
-        <h1 class="hero__title" id="hero-titulli">Një mënyrë më e thjeshtë për transportin urban.</h1>
+        <h1 class="hero__title" id="hero-titulli">Një mënyrë më e thjeshtë për <span class="theks">transportin urban</span></h1>
         <p class="hero__lead">Abonimi i autobusit, në telefonin tënd. Zgjedh një linjë, një kompani ose gjithë rrjetin, dhe e tregon me një kod QR që verifikohet në çast kur hip.</p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="#abonimet">Shiko abonimet</a>
@@ -185,14 +189,14 @@
   <section class="section" id="si-funksionon" aria-labelledby="si-titulli">
     <div class="wrap">
       <div class="section__head">
-        <h2 class="kapitulli" id="si-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">01</span> <span class="kapitulli__emri">Si funksionon</span></span> <span class="kapitulli__titulli">Pesë hapa. Një udhëtim.</span></h2>
-        <p class="section__lead">Pesë hapa, një herë. Pastaj çdo udhëtim është vetëm hapi i fundit.</p>
+        <h2 class="kapitulli" id="si-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">01</span> <span class="kapitulli__emri">Si funksionon</span></span> <span class="kapitulli__titulli">Regjistrohu një herë, <span class="theks">udhëto çdo ditë</span></span></h2>
+        <p class="section__lead">Blerja bëhet një herë në muaj, dhe në çdo udhëtim mjafton kodi QR.</p>
       </div>
       <ol class="journey">
         <li class="journey__stop">
           <span class="journey__node" aria-hidden="true"></span>
           <h3>Regjistrohu</h3>
-          <p>Krijo llogarinë me email dhe fjalëkalim, dhe konfirmo emailin me një kod.</p>
+          <p>Shkruaj të dhënat e letërnjoftimit ose të pasaportës, krijo llogarinë me email dhe fjalëkalim, dhe konfirmo emailin me një kod.</p>
         </li>
         <li class="journey__stop">
           <span class="journey__node" aria-hidden="true"></span>
@@ -201,8 +205,8 @@
         </li>
         <li class="journey__stop">
           <span class="journey__node" aria-hidden="true"></span>
-          <h3>Aktivizo</h3>
-          <p>Pas blerjes abonimi del te «Abonimet e mia», me datën kur nis dhe kur mbaron.</p>
+          <h3>Paguaj</h3>
+          <p>Pagesa bëhet në aplikacion. Abonimi del menjëherë te «Abonimet e mia», me datën kur nis dhe kur mbaron.</p>
         </li>
         <li class="journey__stop">
           <span class="journey__node" aria-hidden="true"></span>
@@ -212,7 +216,7 @@
         <li class="journey__stop journey__stop--end">
           <span class="journey__node" aria-hidden="true"></span>
           <h3>Udhëto</h3>
-          <p>Skaneri i operatorit e verifikon kodin te serveri dhe të tregon përgjigjen menjëherë.</p>
+          <p>Fatorinoja e skanon kodin, dhe serveri jep përgjigjen në çast.</p>
         </li>
       </ol>
     </div>
@@ -223,8 +227,8 @@
     <div class="wrap">
       <div class="section__head section__head--split">
         <div>
-          <h2 class="kapitulli" id="abonimet-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">02</span> <span class="kapitulli__emri">Abonimet</span></span> <span class="kapitulli__titulli">Linjë. Kompani. Rrjet.</span></h2>
-          <p class="section__lead">Tre shtrirje. Zgjidh sa larg të çon abonimi.</p>
+          <h2 class="kapitulli" id="abonimet-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">02</span> <span class="kapitulli__emri">Abonimet</span></span> <span class="kapitulli__titulli">Ti zgjedh <span class="theks">sa larg të çon</span></span></h2>
+          <p class="section__lead">Tri mundësi, nga një linjë e vetme te gjithë rrjeti.</p>
         </div>
         <!-- V1 shet vetëm 30-ditëshin. Kohëzgjatja e dytë u hoq me vendim, 20 shtator 2026. -->
         <p class="duration-note">Të gjitha vlejnë <strong>30 ditë</strong>.</p>
@@ -256,10 +260,10 @@
   <section class="section section--night" id="turistet" aria-labelledby="turistet-titulli">
     <div class="wrap split">
       <div>
-        <h2 class="kapitulli" id="turistet-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">03</span> <span class="kapitulli__emri">Turistët</span></span> <span class="kapitulli__titulli">Viziton Shqipërinë?</span></h2>
-        <p class="tag tag--light">Përditësimi i ardhshëm</p>
-        <p class="section__lead">Paketa turistike 7-ditore, vetëm për turistët. Regjistrohesh me pasaportë, konfirmon emailin me një kod, merr QR-në dhe udhëton shtatë ditë.</p>
-        <p class="note-light">Turistët nuk blejnë abonimet mujore të qytetarëve: kanë ofertat e tyre. Paketat turistike nuk janë ende në shitje; këtu tregohen çmimet e vendosura, që të dihen para se të hapen.</p>
+        <h2 class="kapitulli" id="turistet-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">03</span> <span class="kapitulli__emri">Turistët</span></span> <span class="kapitulli__titulli">Viziton <span class="theks">Shqipërinë?</span></span></h2>
+        <p class="tag tag--light">Vjen me përditësimin e ardhshëm</p>
+        <p class="section__lead">Paketa turistike zgjat 7 ditë dhe është vetëm për vizitorët. Regjistrohesh me kartën e identitetit ose me pasaportë, konfirmon emailin me një kod dhe merr kodin QR.</p>
+        <p class="note-light">Abonimet mujore janë për qytetarët, ndërsa vizitorët kanë paketat e veta. Paketat nuk shiten ende. Çmimet që sheh këtu janë vendosur që tani, që ta dish sa kushton para se të nisësh udhëtimin.</p>
       </div>
       <!-- Çmimet vijnë nga `site.config.json` (të njoftuara, jo katalog) — asnjë numër në HTML. -->
       <ul class="tourist-plans" data-tourist-plans aria-live="polite">
@@ -272,15 +276,15 @@
   <section class="section" id="operatoret" aria-labelledby="operatoret-titulli">
     <div class="wrap">
       <div class="section__head">
-        <h2 class="kapitulli" id="operatoret-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">04</span> <span class="kapitulli__emri">Operatorët</span></span> <span class="kapitulli__titulli">Skaneri pyet. Serveri vendos.</span></h2>
+        <h2 class="kapitulli" id="operatoret-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">04</span> <span class="kapitulli__emri">Operatorët</span></span> <span class="kapitulli__titulli">Fatorinoja skanon, <span class="theks">serveri vendos</span></span></h2>
         <p class="section__lead">Kompanitë e transportit marrin skanerin, verdiktin e serverit dhe një pamje të qartë të udhëtimeve në linjat e tyre.</p>
       </div>
       <dl class="roles">
-        <div class="role"><dt>Skanimi</dt><dd>Fatorino skanon kodin QR të udhëtarit me pajisjen e kompanisë.</dd></div>
+        <div class="role"><dt>Skanimi</dt><dd>Kodi QR i udhëtarit skanohet me pajisjen e kompanisë.</dd></div>
         <div class="role"><dt>Verifikimi</dt><dd>Serveri vendos: i vlefshëm, i skaduar, i revokuar ose i përdorur tashmë. Pajisja nuk vendos vetë.</dd></div>
         <div class="role"><dt>Kontrolli</dt><dd>Kontrollori mund ta rikontrollojë një udhëtar pas hipjes, pa e numëruar udhëtimin dy herë.</dd></div>
         <div class="role"><dt>Menaxhimi</dt><dd>Kompania mban pajisjet e veta të skanimit dhe sheh skanimet në linjat që drejton.</dd></div>
-        <div class="role"><dt>Ndarja</dt><dd>Abonimi i rrjetit nuk i shkon kompanisë ku u ble: ndahet sipas udhëtimeve që ndodhën vërtet — kush e mbarti udhëtarin, merr pjesën.</dd></div>
+        <div class="role"><dt>Ndarja</dt><dd>Abonimi i rrjetit nuk i përket një kompanie të vetme: ndahet sipas udhëtimeve që ndodhën vërtet, dhe kush e mbarti udhëtarin merr pjesën.</dd></div>
       </dl>
     </div>
   </section>
@@ -289,21 +293,20 @@
   <section class="section" id="siguria" aria-labelledby="siguria-titulli">
     <div class="wrap">
       <div class="section__head">
-        <h2 class="kapitulli" id="siguria-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">05</span> <span class="kapitulli__emri">Siguria</span></span> <span class="kapitulli__titulli">Siguria dhe privatësia</span></h2>
-        <p class="section__lead">Si i mbajmë të dhënat e tua, pa premtime më të mëdha se sistemi.</p>
+        <h2 class="kapitulli" id="siguria-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">05</span> <span class="kapitulli__emri">Siguria</span></span> <span class="kapitulli__titulli">Siguria dhe <span class="theks">privatësia</span></span></h2>
+        <p class="section__lead">Mbajmë vetëm të dhënat që duhen për abonimin, dhe i mbrojmë kështu:</p>
       </div>
       <div class="security">
-        <article class="security__item"><h3>Identiteti i mbrojtur</h3><p>Identiteti vuloset një herë dhe nuk ndryshohet më nga profili. Aboneja nuk ruan foto të dokumentit, dhe numri i tij shfaqet i maskuar edhe për administratorët.</p></article>
-        <article class="security__item"><h3>Verifikim te serveri</h3><p>Çdo skanim vendoset te serveri, jo te telefoni apo te skaneri. Një aplikacion i ndryshuar nuk e bën dot një abonim të skaduar të vlefshëm.</p></article>
-        <article class="security__item"><h3>Kodi QR</h3><p>Një abonim ka vetëm një kod aktiv. Kodi skadon pas pak minutash, dhe i njëjti kod i përdorur në dy vende kapet.</p></article>
-        <article class="security__item"><h3>Fjalëkalimet</h3><p>Fjalëkalimi nuk ruhet kurrë ashtu siç e shkruan: baza mban vetëm një hash të tij.</p></article>
-        <article class="security__item"><h3>Gjurmë auditimi</h3><p>Hyrjet dhe veprimet e ndjeshme të administratorëve regjistrohen, që çdo ndryshim të ketë emër dhe kohë.</p></article>
+        <article class="security__item"><h3>Dokumenti yt</h3><p>Nuk ruajmë foto të letërnjoftimit apo të pasaportës. Numri personal shfaqet pjesërisht i fshehur, edhe për stafin tonë. Pasi verifikohet, identiteti nuk ndryshohet më nga profili, që abonimi të mos kalojë në emrin e dikujt tjetër.</p></article>
+        <article class="security__item"><h3>Vendimi merret te serveri</h3><p>Kur fatorinoja skanon kodin, vendimin e merr serveri ynë. Telefoni yt dhe pajisja e skanimit vetëm e dërgojnë kodin dhe shfaqin përgjigjen, prandaj një aplikacion i ngacmuar nuk e bën dot të vlefshëm një abonim të skaduar.</p></article>
+        <article class="security__item"><h3>Kodi QR ndryshon vetë</h3><p>Abonimi ka një kod të vetëm aktiv, dhe ai skadon pas pak minutash. Një foto e vjetër e kodit nuk vlen, dhe nëse i njëjti kod skanohet në dy vende, skanimi i dytë refuzohet.</p></article>
+        <article class="security__item"><h3>Fjalëkalimi yt</h3><p>Fjalëkalimin nuk e ruajmë ashtu siç e shkruan. Baza mban vetëm një gjurmë të koduar të tij (hash), prandaj as ne nuk mund ta lexojmë.</p></article>
+        <article class="security__item"><h3>Çdo veprim i stafit shënohet</h3><p>Kur dikush nga stafi hyn në panel ose ndryshon diçka të ndjeshme, shënohet kush e bëri dhe kur.</p></article>
         <article class="security__item security__item--honest" data-pilot-list>
-          <h3>Ende në pilot</h3>
+          <h3>Ende jo gati</h3>
           <ul>
-            <li data-feature-off="payments_live">Pagesat reale me bankë</li>
-            <li>Dërgimi i emailit te kutia jote reale</li>
-            <li data-feature-off="tourist_camera_reading">Leximi i dokumentit me kamerë</li>
+            <li data-feature-off="payments_live">Pagesa me kartë bankare. Tani blerjet janë demo.</li>
+            <li data-feature-off="tourist_camera_reading">Leximi i dokumentit me kamerë. Tani të dhënat shkruhen me dorë.</li>
           </ul>
         </article>
       </div>
@@ -315,20 +318,21 @@
     <div class="wrap faq-wrap">
       <div class="section__head">
         <h2 class="kapitulli" id="pyetje-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">06</span> <span class="kapitulli__emri">Pyetje</span></span> <span class="kapitulli__titulli">Pyetje të shpeshta</span></h2>
-        <p class="section__lead">Përgjigje nga mënyra si punon sistemi sot.</p>
+        <p class="section__lead">Përgjigjet përshkruajnë aplikacionin ashtu siç punon sot.</p>
       </div>
       <div class="faq" data-faq>
-        <details><summary>Çfarë është Aboneja?</summary><p>Abonimi i autobusit urban në telefon. Blen një abonim 30-ditësh për një linjë, një kompani ose gjithë rrjetin, dhe e tregon me një kod QR që skanohet kur hip.</p></details>
+        <details><summary>Çfarë është Aboneja?</summary><p>Aboneja është abonimi i autobusit urban, në telefonin tënd. E blen nga aplikacioni dhe zgjedh ku vlen: në një linjë, në të gjitha linjat e një kompanie ose në gjithë rrjetin. Abonimi zgjat 30 ditë. Kur hip, tregon kodin QR që del në ekran, fatorinoja e skanon dhe je në rregull.</p></details>
         <details><summary>Sa kushton?</summary><p data-fill="price-faq">Çmimet janë te seksioni Abonimet dhe lexohen nga i njëjti katalog që përdor aplikacioni.</p></details>
         <details><summary>Ku vlen?</summary><p><span data-fill="network-faq">Në linjat e autobusëve urbanë të Tiranës që janë në Abonejë.</span> Abonimi i linjës vlen në linjën që zgjedh, ai i kompanisë në linjat e saj, dhe ai i rrjetit kudo.</p></details>
         <details><summary>A funksionon pa internet?</summary><p>Jo ende. Kodi QR krijohet nga serveri dhe vlen vetëm pak minuta, prandaj telefoni ka nevojë për internet kur e hap. Edhe skaneri i verifikon kodet te serveri.</p></details>
-        <details><summary>Si regjistrohem?</summary><p>Nis me dokumentin: shkruan emrin, mbiemrin, datëlindjen dhe numrin personal, dhe i konfirmon. Pastaj krijon llogarinë me email dhe fjalëkalim dhe konfirmon emailin me një kod. Identiteti vuloset nga serveri dhe nuk ndryshohet më. Më pas zgjedh abonimin.</p></details>
+        <details><summary>Si regjistrohem?</summary><p>Nis me letërnjoftimin ose me pasaportën (nën 16 vjeç, vetëm me pasaportë): shkruan emrin, mbiemrin, datëlindjen dhe numrin personal, dhe i konfirmon. Pastaj krijon llogarinë me email dhe fjalëkalim dhe konfirmon emailin me kodin që të vjen. Pasi verifikohet, identiteti nuk ndryshohet më. Më pas zgjedh abonimin.</p></details>
         <details><summary>Çfarë ndodh kur ndryshoj telefon?</summary><p>Abonimi rri te llogaria, jo te telefoni. Hyr me të njëjtën llogari në telefonin e ri: kodi i ri QR e zëvendëson menjëherë të vjetrin.</p></details>
-        <details><summary>Si funksionon QR?</summary><p>Kur hap abonimin, aplikacioni merr një kod të ri nga serveri. Skaneri e dërgon kodin te serveri, i cili kontrollon abonimin dhe kthen përgjigjen: i vlefshëm, i skaduar, i revokuar ose i përdorur tashmë.</p></details>
-        <details><summary>A mund ta përdor si turist?</summary><p data-fill="tourist-faq">Jo me abonimet e qytetarëve. Turistët kanë seksionin e tyre, vetëm për turistë, me ofertat e veta: paketat turistike 7-ditore (shih seksionin Turistët). Turisti regjistrohet me pasaportë dhe konfirmon emailin me një kod, që ta ruajë llogarinë edhe kur ndërron telefon. Seksioni hapet me përditësimin e ardhshëm; leximi i pasaportës me kamerë nuk është ende gati.</p></details>
+        <details><summary>Si funksionon kodi QR?</summary><p>Kur hap abonimin, aplikacioni merr një kod të ri nga serveri. Skaneri e dërgon kodin te serveri, i cili kontrollon abonimin dhe kthen përgjigjen: i vlefshëm, i skaduar, i revokuar ose i përdorur tashmë.</p></details>
+        <details><summary>A mund ta përdor si turist?</summary><p data-fill="tourist-faq">Jo me abonimet e qytetarëve. Vizitorët kanë paketat turistike 7-ditore (shih seksionin Turistët). Regjistrohesh me kartën e identitetit ose me pasaportë dhe konfirmon emailin me një kod, që llogaria të mbetet e jotja edhe kur ndërron telefon. Paketat hapen me përditësimin e ardhshëm. Leximi i dokumentit me kamerë nuk është ende gati.</p></details>
         <details><summary>Çfarë ndodh nëse më skadon abonimi?</summary><p>Skaneri e tregon si të skaduar dhe hipja nuk pranohet me atë abonim. Abonimi nuk rinovohet vetë: blen një të ri nga aplikacioni kur të duash.</p></details>
+        <details><summary>Si e fshij llogarinë?</summary><p>Te aplikacioni: Profili, pastaj «Fshi llogarinë». Llogaria ngrin menjëherë dhe kodi QR nuk vlen më. Për 24 orë mund ta anulosh duke hyrë sërish; pas kësaj fshihen të dhënat e tua personale. Abonimi aktiv mbaron pa rimbursim. Hapat e plotë: <a href="fshi-llogarine/">Fshi llogarinë</a>.</p></details>
         <details><summary>A mund të paguaj sot?</summary><p data-fill="payments-faq">Jo ende. Pagesat reale hapen vetëm pasi lidhja me bankën të provohet plotësisht. Deri atëherë blerjet në pilot janë demo.</p></details>
-        <details><summary>Si kontaktoj mbështetjen?</summary><p data-fill="contact-faq">Adresa zyrtare e mbështetjes publikohet para nisjes së pilotit.</p></details>
+        <details><summary>Si kontaktoj mbështetjen?</summary><p data-fill="contact-faq">Shkruaj te <a href="mailto:info@aboneja.al">info@aboneja.al</a>. Përgjigjemi në ditët e punës.</p></details>
       </div>
     </div>
   </section>
@@ -340,8 +344,8 @@
   <section class="section section--night story" id="historia" aria-labelledby="historia-titulli">
     <div class="wrap">
       <div class="section__head">
-        <h2 class="kapitulli" id="historia-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">07</span> <span class="kapitulli__emri">Historia</span></span> <span class="kapitulli__titulli">Pse u krijua Aboneja Ime</span></h2>
-        <p class="section__lead story__slogan">«Pa radhë, pa sportele.»</p>
+        <h2 class="kapitulli" id="historia-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">07</span> <span class="kapitulli__emri">Historia</span></span> <span class="kapitulli__titulli">Pse u krijua <span class="theks">Aboneja Ime</span></span></h2>
+        <p class="section__lead story__slogan"><span class="slogan__rresht"><span class="theks">Pa radhë</span></span> <span class="slogan__rresht"><span class="theks">pa sportele</span></span></p>
       </div>
 
       <div class="story__grid">
@@ -381,22 +385,24 @@
         </li>
       </ul>
 
-      <p class="story__now">Sot Aboneja është në pilot: udhëtari regjistrohet, blen, merr QR-në dhe skanohet — me para demo. Pagesat reale mbeten të mbyllura derisa banka dhe provat e parave të jenë në vend. Kjo faqe nuk e fsheh asnjë nga këto.</p>
+      <p class="story__now">Sot Aboneja është në pilot: udhëtari regjistrohet, blen abonimin me para demo, merr kodin QR dhe fatorinoja ia skanon. Pagesat reale mbeten të mbyllura derisa të lidhet banka dhe të provohet çdo hap i parave.</p>
     </div>
   </section>
 
   <section class="section" id="rreth" aria-labelledby="rreth-titulli">
     <div class="wrap split">
       <div class="split__anchor">
-        <h2 class="kapitulli" id="rreth-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">08</span> <span class="kapitulli__emri">Rreth</span></span> <span class="kapitulli__titulli">Rreth Aboneja</span></h2>
+        <h2 class="kapitulli" id="rreth-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">08</span> <span class="kapitulli__emri">Rreth</span></span> <span class="kapitulli__titulli">Rreth <span class="theks">Aboneja</span></span></h2>
       </div>
-      <div class="prose">
-        <p>Aboneja Ime është një projekt shqiptar për transportin urban, i ndërtuar në Tiranë.</p>
-        <p>Qëllimi është i thjeshtë: udhëtari ta blejë, ta mbajë dhe ta tregojë abonimin nga telefoni, dhe kompanitë e transportit të kenë të dhëna të sakta për udhëtimet në linjat e tyre.</p>
-        <p>Kalimi nga sporteli fizik te telefoni heq pritjen dhe oraret e kufizuara. Platforma mbështetet te validimi me kod QR pa kontakt dhe te një panel drejtimi për institucionet vendore; gjurmimi i mjeteve në kohë reale është hapi i radhës.</p>
-        <p>Aboneja u ndërtua nga një person, me ndihmën e inteligjencës artificiale dhe me kosto minimale. Sot nuk është më ide: ka bazë të dhënash të vetën, verifikim identiteti, kod QR që lëshohet nga serveri, skanim me verdikt të serverit dhe një regjistër ku çdo transaksion mbyllet në zero.</p>
-        <p>Synimi është të shërbejë bashkitë e Shqipërisë, duke nisur nga një linjë e vetme me një operator. Aboneja është sot në fazë pilot, dhe çdo veçori që nuk është ende gati shënohet si e tillë në këtë faqe.</p>
-        <p>Ky është një hap drejt infrastrukturës së qytetit të mençur: bashkëpunim mes sektorit publik dhe atij privat, me teknologji që e bën abonimin më të arritshëm për ata që udhëtojnë çdo ditë.</p>
+      <div class="prose prose--rreth">
+        <p class="rreth__krye">Digjitalizimi i transportit publik</p>
+        <ul class="rreth__lista">
+          <li>Blerja e abonimeve mujore direkt në aplikacion</li>
+          <li>Pa radhë, në çdo moment, pa sportele</li>
+          <li>Çdo informacion mbi kohën e mbërritjes dhe pozicionin e autobusit, në kohë reale <span class="feature__status" data-status="dev">Në zhvillim</span></li>
+        </ul>
+        <p class="rreth__etiketa">Shënim</p>
+        <p>Aplikacioni është në fazën e tij fillestare, në pilot. U krijua vetëm nga një mendim dhe një dëshirë, me kosto minimale. Unë nuk jam programues: e ndërtova falë inteligjencës artificiale, që e kthen mendimin tënd në aplikacion.</p>
       </div>
     </div>
   </section>
@@ -405,7 +411,7 @@
   <section class="section contact" id="kontakt" aria-labelledby="kontakt-titulli">
     <div class="wrap contact__inner">
       <h2 class="kapitulli" id="kontakt-titulli"><span class="kapitulli__stacioni"><span class="kapitulli__nr">09</span> <span class="kapitulli__emri">Stacioni i fundit</span></span> <span class="kapitulli__titulli">Kontakt</span></h2>
-      <p class="contact__text" data-fill="contact-main">Adresa zyrtare e mbështetjes publikohet para nisjes së pilotit. Deri atëherë, Aboneja është në testim.</p>
+      <p class="contact__text" data-fill="contact-main">Shkruaj te <a href="mailto:info@aboneja.al">info@aboneja.al</a>. Përgjigjemi në ditët e punës.</p>
     </div>
   </section>
   </div>
@@ -427,6 +433,11 @@
       <a href="#historia">Historia</a>
       <a href="#rreth">Rreth</a>
       <a href="#kontakt">Kontakt</a>
+    </nav>
+    <nav class="footer__nav" aria-label="Dokumentet ligjore">
+      <a href="privatesia/">Privatësia</a>
+      <a href="kushtet/">Kushtet</a>
+      <a href="fshi-llogarine/">Fshi llogarinë</a>
     </nav>
     <p class="footer__meta"><span data-year>2026</span> Aboneja Ime <span class="footer__env" data-env hidden></span></p>
   </div>

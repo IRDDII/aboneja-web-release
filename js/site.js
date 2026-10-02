@@ -1,4 +1,4 @@
-import { nisGjuhen, perkthe, gjuhaAktuale } from './gjuha.js?v=cd83ea2f';
+import { nisGjuhen, perkthe, gjuhaAktuale } from './gjuha.js?v=6a1e959b';
 /* Aboneja — website publik. Pa varësi, pa gjurmues, pa cookie.
  *
  * Lexon vetëm dy skedarë: `site-config.json` (mjedisi dhe veçoritë) dhe
@@ -27,10 +27,10 @@ const TE_SHQUARA_EN = { LINE: 'the line', COMPANY: 'the company', NETWORK: 'the 
 const TURISTI = {
   LINE: ['Një linjë', 'një linjë', 'në linjën që zgjedh'],
   COMPANY: ['Një kompani', 'të gjitha linjat e një kompanie', 'në të gjitha linjat e saj'],
-  NETWORK: ['Gjithë Shqipëria', 'të gjitha linjat në Shqipëri', 'në të gjitha linjat'],
+  NETWORK: ['Gjithë rrjeti', 'gjithë rrjeti', 'në të gjitha linjat'],
 };
-const TURISTI_EN = { LINE: 'one line', COMPANY: 'every line of one company', NETWORK: 'every line in Albania' };
-const TURISTI_EMRI_EN = { LINE: 'One line', COMPANY: 'One company', NETWORK: 'All of Albania' };
+const TURISTI_EN = { LINE: 'one line', COMPANY: 'every line of one company', NETWORK: 'the whole network' };
+const TURISTI_EMRI_EN = { LINE: 'One line', COMPANY: 'One company', NETWORK: 'The whole network' };
 
 /** Kohëzgjatja që shet V1. Katalogu vjen i filtruar; ky është rrjeti i dytë. */
 const gjendja = { konfig: null, katalogu: null, kohezgjatja: 30 };
@@ -190,13 +190,14 @@ function vizatoTuristet() {
     const liste = tur.offers.filter((o) => TURISTI[o.scope]).map((o) => (en()
       ? `${TURISTI_EN[o.scope]} ${leke(o.price_lek)} L`
       : `${TURISTI[o.scope][1]} ${leke(o.price_lek)} L`)).join(', ');
+    // Karta e identitetit e para (Irdi, 1 tetor 2026): shumica e vizitorëve vijnë me të, jo me pasaportë.
     faq.textContent = t(
-      `Jo me abonimet e qytetarëve. Turistët kanë seksionin e tyre, vetëm për turistë, me ofertat e veta: paketat turistike ${dite}-ditore — ${liste}. `
-        + 'Turisti regjistrohet me pasaportë dhe konfirmon emailin me një kod, që ta ruajë llogarinë edhe kur ndërron telefon. '
-        + 'Seksioni hapet me përditësimin e ardhshëm; leximi i pasaportës me kamerë nuk është ende gati.',
-      `Not with the citizens’ subscriptions. Visitors have their own section, for visitors only, with their own offers: ${dite}-day visitor packs — ${liste}. `
-        + 'A visitor signs up with a passport and confirms the email with a code, so the account survives a change of phone. '
-        + 'The section opens with the next update; reading the passport with the camera is not ready yet.',
+      `Jo me abonimet e qytetarëve. Vizitorët kanë paketat turistike ${dite}-ditore: ${liste}. `
+        + 'Regjistrohesh me kartën e identitetit ose me pasaportë dhe konfirmon emailin me një kod, që llogaria të mbetet e jotja edhe kur ndërron telefon. '
+        + 'Paketat hapen me përditësimin e ardhshëm. Leximi i dokumentit me kamerë nuk është ende gati.',
+      `Not with the citizens’ subscriptions. Visitors have their own ${dite}-day visitor packs: ${liste}. `
+        + 'You sign up with your ID card or passport and confirm your email with a code, so the account stays yours when you change phone. '
+        + 'The packs open with the next update. Reading the document with the camera is not ready yet.',
     );
   }
 }
@@ -332,6 +333,19 @@ function ndiqSeksionet() {
   lidhjet.forEach((_, id) => { const s = document.getElementById(id); if (s) vezhguesi.observe(s); });
 }
 
+// Theksi i titujve: drita kalon një herë nëpër fjalët kyçe kur titulli hyn në ekran (CSS: `.ndezur .theks`).
+function ndizTitujt() {
+  if (!('IntersectionObserver' in window)) return;
+  const vezhguesi = new IntersectionObserver((hyrjet) => {
+    for (const h of hyrjet) {
+      if (!h.isIntersecting) continue;
+      h.target.classList.add('ndezur');
+      vezhguesi.unobserve(h.target);
+    }
+  }, { rootMargin: '0px 0px -22% 0px' });
+  $$('.kapitulli__titulli, .story__slogan').forEach((t) => vezhguesi.observe(t));
+}
+
 // Kur ndërrohet gjuha, fjalitë me numra rishkruhen; pjesa tjetër përkthehet nga fjalori.
 document.addEventListener('aboneja:gjuha', () => {
   if (gjendja.konfig) { zbatoTekstetEKonfigurimit(); vizatoTuristet(); }
@@ -344,6 +358,7 @@ async function nis() {
   $('[data-year]').textContent = String(new Date().getFullYear());
   lidhMenune();
   ndiqSeksionet();
+  ndizTitujt();
   try {
     gjendja.konfig = await lexoJson('site-config.json');
     zbatoKonfigurimin(gjendja.konfig);

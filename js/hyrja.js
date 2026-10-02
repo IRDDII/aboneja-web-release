@@ -1,4 +1,4 @@
-// ── Hyrja «Rrjeti ndizet» (6,7 s) ─────────────────────────────────────────────
+// ── Hyrja «Rrjeti ndizet» ───────────────────────────────────────────────────────
 //
 // Skript klasik në <head>, jo modul: klasa `me-hyrje` duhet të jetë te <html> PARA
 // vizatimit të parë, përndryshe hero-ja shfaqet një çast dhe mbulohet — një
@@ -7,11 +7,12 @@
 // Kohët nuk jetojnë këtu: janë te :root i css/site.css («Kohët e hyrjes»). Ky skedar
 // vetëm vendos nëse hyrja shfaqet dhe e heq kur mbaron.
 //
-// Hyrja është dekor. Nuk shfaqet kur:
+// Irdi, 1 tetor 2026: hyrja luhet në ÇDO hapje dhe në çdo rifreskim, si te app-i —
+// kujtesa «një herë për sesion» (sessionStorage) u hoq. Hyrja është dekor. Nuk shfaqet kur:
 //   • njeriu ka kërkuar më pak lëvizje (prefers-reduced-motion)
-//   • hyri nga një lidhje te një seksion (#abonimet…) — ai do përmbajtjen, jo skenën
-//   • e ka parë një herë në këtë sesion
-// `?hyrja` në adresë e shfaq sërish (për provë), përveçse kur kërkohet më pak lëvizje.
+//   • hyri nga një lidhje te një seksion (#abonimet…) — ai do përmbajtjen, jo skenën.
+//     Rifreskimi i asaj faqeje e shfaq sërish: rifreskimi është kërkesë për fillimin.
+// `?hyrja` në adresë e shfaq gjithmonë (për provë), përveçse kur kërkohet më pak lëvizje.
 // Çdo klik, tast, rrotullim ose prekje e kalon. Edhe pa këtë skedar mbaron vetë:
 // CSS-ja e fsheh mbulesën në fund të animacionit të saj. Kur s'shfaqet, mbulesa
 // hiqet nga DOM-i — asnjë tekst i fshehur nuk mbetet në faqe.
@@ -21,13 +22,12 @@
   try {
     var detyruar = /(?:^|[?&])hyrja(?:[=&]|$)/.test(location.search.slice(1));
     var paLevizje = Boolean(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-    shfaq = !paLevizje && (detyruar || !(location.hash && location.hash.length > 1));
-    if (shfaq && !detyruar) {
-      try {
-        if (window.sessionStorage.getItem('aboneja-hyrja')) shfaq = false;
-        else window.sessionStorage.setItem('aboneja-hyrja', '1');
-      } catch { /* dritare private: shfaqet, pa kujtesë */ }
-    }
+    var rifreskim = false;
+    try {
+      var lundrimi = performance.getEntriesByType('navigation')[0];
+      rifreskim = Boolean(lundrimi && lundrimi.type === 'reload');
+    } catch { /* shfletues pa Navigation Timing: vlen rregulli i lidhjes */ }
+    shfaq = !paLevizje && (detyruar || rifreskim || !(location.hash && location.hash.length > 1));
     if (shfaq) html.classList.add('me-hyrje');
   } catch { shfaq = false; }
 
@@ -59,7 +59,7 @@
     gjeometria();
     window.addEventListener('resize', gjeometria);
     ngjarjet.forEach(function (n) { window.addEventListener(n, kalo, { passive: true, once: true }); });
-    // Mbulesa hiqet sapo mbaron animacioni i saj (fundi i 6,7 s ose kalimi) — jo kur mbaron një nga fëmijët.
+    // Mbulesa hiqet sapo mbaron animacioni i saj (fundi i hyrjes ose kalimi) — jo kur mbaron një nga fëmijët.
     mbulesa.addEventListener('animationend', function (e) {
       if (e.target === mbulesa && (e.animationName === 'hyrja-mbaro' || e.animationName === 'hyrja-kalo')) hiq();
     });
